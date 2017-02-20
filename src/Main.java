@@ -1,10 +1,15 @@
+import java.util.ArrayList
+import java.util.Scanner
+
+
 /**
- * Created by ernestine on 2/20/2017.
+ * Created by Millicent, Nicole, and Teron on 2/20/2017.
  */
 public class Main {
     public static void main(String[] args) {
 
-        System.out.println("Hello World");
+        ArrayList<Book>catalogue = new ArrayList<Book>();
+                B
 
     }
 }
