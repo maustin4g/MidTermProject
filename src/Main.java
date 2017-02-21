@@ -59,7 +59,7 @@ public class Main {
            int index = scan.nextInt();
            System.out.println(catalogue.get(index));
            System.out.println("Would you like to checkout this book today?");
-            System.out.println("Please enter 1 for Yes and 2 for No..");
+            System.out.println("Please enter 1 for Yes and 2 for No.");
             int choice = scan.nextInt();
            if(choice == 1){
            catalogue.get(index);
