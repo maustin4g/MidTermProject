@@ -14,9 +14,6 @@ public class Main {
         System.out.println("       Please Select from the Following Options:         ");
         System.out.println("*********************************************************");
 
-        ArrayList<Book> catalogue = new ArrayList<Book>();
-
-
 
         ArrayList<Book>catalogue = new ArrayList<Book>();
         Scanner scan = new Scanner(System.in);
