@@ -19,7 +19,11 @@ public class Book {
     //"all-arguments" constructor
     public Book(String author, String title, String format, String genre, String status){
 
-
+this.author = author;
+this.title = title;
+this.format = format;
+this.genre = genre;
+this.status = status;
     }
 
     public String getAuthor() {
@@ -60,5 +64,16 @@ public class Book {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "author='" + author + '\'' +
+                ", title='" + title + '\'' +
+                ", format='" + format + '\'' +
+                ", genre='" + genre + '\'' +
+                ", status='" + status + '\'' +
+                '}';
     }
 }
