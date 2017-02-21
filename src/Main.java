@@ -10,13 +10,9 @@ public class Main {
         Scanner scan = new Scanner(System.in);
 
         int choice = 0;
-        System.out.println("***********Welcome to Books Library!*********************");
-        System.out.println("       Please Select from the Following Options:         ");
-        System.out.println("*********************************************************");
 
 
-        ArrayList<Book>catalogue = new ArrayList<Book>();
-        Scanner scan = new Scanner(System.in);
+
 
         ///USER PROMPT///
         System.out.println("Would you like to see the books we have available today? Enter 1 for yes and 2 for no. ");
@@ -66,8 +62,8 @@ public class Main {
            int index = scan.nextInt();
            System.out.println(catalogue.get(index));
            System.out.println("Would you like to checkout this book today?");
-            System.out.println("Please enter 1 for Yes and 2 for No..");
-            int choice = scan.nextInt();
+            System.out.println("Please enter 1 for Yes and 2 for No.");
+             choice =scan.nextInt();
            if(choice == 1){
            catalogue.get(index);
             System.out.println("Enjoy your book.");
