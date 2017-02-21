@@ -61,28 +61,46 @@ public class Book {
         this.author = author;
     }
 
+    //other methods
+    public boolean checkStatus(String status) {
+        if (status.equals(this.status)) {
+            return true;
+        }
+        return false;
+
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
 
+
+
     public void setFormat(String format) {
         this.format = format;
+
     }
 
     public void setGenre(String genre) {
         this.genre = genre;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
     public void setStatus(String status) {
         this.status = status;
     }
 
-    //other methods
-    public boolean checkStatus(String status) {
-        if (status.equals (this.status)) {
-            return true;
-        }
-        return false;
+    @Override
+    public String toString() {
+        return "Book{" +
+                "author='" + author + '\'' +
+                ", title='" + title + '\'' +
+                ", format='" + format + '\'' +
+                ", genre='" + genre + '\'' +
+                ", status='" + status + '\'' +
+                '}';
     }
-
 }
