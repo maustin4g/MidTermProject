@@ -1,5 +1,5 @@
 /**
- * Created by ernestine on 2/20/2017.
+ * Created by Millicent, Nicole, and Teron on 2/20/2017.
  */
 import java.util.Scanner;
 

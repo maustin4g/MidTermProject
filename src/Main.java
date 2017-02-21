@@ -7,6 +7,16 @@ import java.util.Scanner;
  */
 public class Main {
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        int choice = 0;
+        System.out.println("***********Welcome to Books Library!*********************");
+        System.out.println("       Please Select from the Following Options:         ");
+        System.out.println("*********************************************************");
+
+        ArrayList<Book> catalogue = new ArrayList<Book>();
+
+
 
         ArrayList<Book>catalogue = new ArrayList<Book>();
         Scanner scan = new Scanner(System.in);
