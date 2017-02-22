@@ -2,14 +2,11 @@
  * Created by Millicent, Nicole, and Teron on 2/20/2017.
  */
 public class Book {
-
     private String author;
     private String title;
     private String format;
     private String genre;
     private String status;
-
-
 
     //All-arguments constructor
     public Book(String author, String title, String format, String genre, String status){
