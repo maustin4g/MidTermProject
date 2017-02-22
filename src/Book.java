@@ -57,6 +57,13 @@ public class Book {
         this.status = status;
     }
 
+    public void checkOut(){
+        this.status = "Checked Out";
+    }
+    public void checkIn() {
+        this.status = "Checked In";
+    }
+
     public boolean checkStatus(String status) {
         if (status.equals(this.status)) {
             return true;
