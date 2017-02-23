@@ -123,7 +123,7 @@ public class Main {
                         catalogue.get(index - 1).checkOut();
                         System.out.println("Check-out complete. Enjoy your book.");
 
-                } else {//if not (else), check it out
+                    } else {//if not (else), check it out
                         System.out.println("Thank you. ");
                     }
 
@@ -137,13 +137,30 @@ public class Main {
 
             //end option 1: see all books\
             Library lib = new Library();
-            //option 2: search by author: nicole
-            //prompt for an author
-            //get input, put into author variable
-            //book b = getBookAuthor(author,catalog);
-            //prompt if user wants to check out
-            //if so, check out
-            //end option 2: search by author
+
+
+            //Option 2: Search by Author: Nicole
+            //Display menu
+            if (userInput == 2) {
+                //check for the specified 'author'
+                //prompt for an author
+                System.out.println("Which author are you searching for? ");
+
+                //get input, put into author variable
+                scan.nextLine();
+
+                String author = scan.nextLine();
+                Book b = lib.getBookAuthor(author, catalogue);
+
+                // Book book = lib.getBookAuthor(author, catalogue);
+                System.out.println(b);
+
+                //prompt if user wants to check out
+//                        if (userInput == 1) {
+//                            catalogue.get(index - 1).checkOut();
+
+            }
+
 
             if (userInput == 3) {
                 //option 3: search by title: teron
