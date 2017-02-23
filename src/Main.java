@@ -93,6 +93,7 @@ public class Main {
                     System.out.println("Please make another choice");
                 }
             }
+            Library lib = new Library ();
             //end option 1: see all books\
 
             //option 2: search by author: nicole
@@ -104,12 +105,22 @@ public class Main {
             //end option 2: search by author
 
             //option 3: search by title: teron
+
             //prompt for an title
+            System.out.println("What Title are you looking for? ");
             //get input, put into title variable
+            String title = scan.next();
             //book b = getBookTitle(title,catalog);
+            Book book = lib.getBookTitle(title, catalogue);
+            System.out.println(book);
             //prompt if user wants to check out
+            System.out.println("Would you like to check out this Book? ");
+
             //if so, check out
+
+
             //end option 3: search by title
+
 
             //option 4: Return a book:millicent
             //display list of all* books with numbers
