@@ -1,3 +1,5 @@
+import java.util.Formatter;
+
 /**
  * Created by Millicent, Nicole, and Teron on 2/20/2017.
  */
@@ -13,7 +15,7 @@ public class Book {
         this.author = author;
         this.title = title;
         this.format = format;
-        this.genre = genre;
+        this.genre = genre    ;
         this.status = status;
     }
 
@@ -70,12 +72,16 @@ public class Book {
         }
         return false;
 
+
     }
+
+
+
     @Override
     public String toString() {
-        return title + "\t    "+ author + "  \t" +
-                format + "  \t" +
-                genre + "  \t" +
-                status;
+        Formatter formatter = new Formatter();
+        return formatter.format("%-30s %-23s %-12s %-13s %-15s", title, author, format, genre, status).toString();
     }
-}
+    }
+
+
