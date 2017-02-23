@@ -48,7 +48,7 @@ public class Main {
         Book b7 = new Book("William Shakespeare", "Macbeth",
                 "Print", "Fiction", "Checked In");
 
-        Book b8 = new Book("Thug Kitchen", "Thug Kitchen LLC",
+        Book b8 = new Book("Thug Kitchen, LLC", "Thug Kitchen",
                 "Print", "Nonfiction", "Checked In");
 
 
@@ -65,122 +65,126 @@ public class Main {
         //loop until all books are printed and checked out
         while (true) {
 
-            //output Books
-            for (int i = 0; i < catalogue.size(); i++) {
-                System.out.println(i + ".) " + catalogue.get(i));
-            }
-            System.out.println("Which book would you like to look at today?");
-            int index = scan.nextInt();
-            System.out.println(catalogue.get(index));
-            System.out.println("Would you like to checkout this book today?");
-            System.out.println("Please enter 1 for Yes and 2 for No.");
-            choice = scan.nextInt();
-            if (choice == 1) {
-                catalogue.get(index);
-                System.out.println("Enjoy your book.");
-                if (catalogue.isEmpty()) {
+            ///USER PROMPT///
+            System.out.println("What would you like to do?");
+            System.out.println("1-See all books");
+            System.out.println("2-Search by author");
+            System.out.println("3-Search by title");
+            System.out.println("4-Return a book");
+            System.out.println("5-Exit system");
+            System.out.println();
+            //GET USER INPUT
+            userInput = scan.nextInt();
+
+            //if-else or switch with menu options based on user input
+
+            //Option 1: see all books
+            if (userInput == 1) {
+                //output Books
+                for (int i = 0; i < catalogue.size(); i++) {
+                    System.out.println((i + 1) + ". " + catalogue.get(i));
+                }
+                //prompt user to choose a book
+                System.out.println("\nWhich book would you like to look at today?");
+                int index = scan.nextInt();
+
+                //look to see if the book is already checked out
+                //if it is, skip the would you like to checkout question
+                //
+                // {
+                //check if the status for this book is already checked out
+                if (catalogue.get(index - 1).getStatus().equals("Checked In")) {
+                    //if it is, tell the user they can't
+                    System.out.println("That book is available.");
+
+                    System.out.println("\nWould you like to checkout this book today?");
+                    System.out.println("Please enter 1 for Yes and 2 for No.");
+                    choice = scan.nextInt();
+                    if (choice == 1) {
+                        catalogue.get(index - 1).checkOut();
+                    } else {//if not (else), check it out
+                        System.out.println("Thank you. ");
+                    }
+
+
+                } else if (catalogue.get(index - 1).getStatus().equals("Checked Out")) {
+                    //if it is, tell the user they can't
                     System.out.println("That book is unavailable.");
-                    return;
-
-                    ///USER PROMPT///
-                    System.out.println("What would you like to do?");
-                    System.out.println("1-See all books");
-                    System.out.println("2-Search by author");
-                    System.out.println("3-Search by title");
-                    System.out.println("4-Return a book");
-                    System.out.println("5-Exit system");
-                    //GET USER INPUT
-                    userInput = scan.nextInt();
-
-                    //if-else or switch with menu options based on user input
-
-                    //Option 1: see all books
-                    if (userInput == 1) {
-                        //output Books
-                        for (int i = 0; i < catalogue.size(); i++) {
-                            System.out.println((i + 1) + ". " + catalogue.get(i));
-                        }
-                        System.out.println("Which book would you like to look at today?");
-                        index = scan.nextInt();
-                        System.out.println(catalogue.get(index - 1));
-
-                        //look to see if the book is already checked out
-                        //if it is, skip the would you like to checkout question
-                        System.out.println("Would you like to checkout this book today?");
-                        System.out.println("Please enter 1 for Yes and 2 for No.");
-                        choice = scan.nextInt();
-                        if (choice == 1) {
-                            //check if the status for this book is already checked out
-                            if (catalogue.get(index - 1).getStatus().equals("Checked Out")) {
-                                //if it is, tell the user they can't
-                                System.out.println("That book is unavailable.");
-                            } else {
-                                //if not (else), check it out
-                                catalogue.get(index - 1).checkOut();
-                                System.out.println("Enjoy your book.");
-                            }
-
-                        } else {
-                            System.out.println("Please make another choice");
-
-                        }
-                    } else {
-                        System.out.println("Please make another choice");
-                    }
-                    Library lib = new Library();
-                    //end option 1: see all books\
-
-                    //option 2: search by author: nicole
-                    //prompt for an author
-                    //get input, put into author variable
-                    //book b = getBookAuthor(author,catalog);
-                    //prompt if user wants to check out
-                    //if so, check out
-                    //end option 2: search by author
-
-                    //option 3: search by title: teron
-                    //prompt for an title
-                    System.out.println("What Title are you looking for? ");
-                    //get input, put into title variable
-                    String title = scan.next();
-                    //book b = getBookTitle(title,catalog);
-                    Book book = lib.getBookTitle(title, catalogue);
-                    System.out.println(book);
-                    //prompt if user wants to check out
-                    System.out.println("Would you like to check out this Book? ");
-
-                    //if so, check out
-
-
-                    //end option 3: search by title
-
-
-                    //option 4: Return a book:millicent
-                    //display list of all* books with numbers
-                    //  *eventual possible stretch goal:
-                    //  display only checked out books
-                    //ask which to return
-                    //take an int input
-                    //check if the book is checked out
-                    //if so, check in
-                    //thank the user
-                    //end option 4: return a books
-
-
-                    //option 5: quit
-                    if (userInput == 2) {
-                        System.out.println("Goodbye. Visit us again soon.");
-                        return;
-
-
-                        //end option 5: quit
-                    }
-
                 }
 
+            }
+
+            //end option 1: see all books\
+            Library lib = new Library();
+            //option 2: search by author: nicole
+            //prompt for an author
+            //get input, put into author variable
+            //book b = getBookAuthor(author,catalog);
+            //prompt if user wants to check out
+            //if so, check out
+            //end option 2: search by author
+
+            if (userInput == 3) {
+                //option 3: search by title: teron
+                //prompt for an title
+                System.out.println("What Title are you looking for? ");
+                //get input, put into title variable
+                scan.nextLine();
+                String title = scan.nextLine();
+                //book b = getBookTitle(title,catalog);
+                Book book = lib.getBookTitle(title, catalogue);
+                System.out.println(book);
 
             }
 
+            //option 4: Return a book: millicent
+            //display list of all* books with numbers
+            //  *eventual possible stretch goal:
+            //  display only checked out books
+            //ask which to return
+            //take an int input
+            //check if the book is checked out
+            //if so, check in
+            //thank the user
+            if (userInput == 4) {
+                //output Books
+                for (int i = 0; i < catalogue.size(); i++) {
+                    System.out.println((i + 1) + ". " + catalogue.get(i));
+                }
+                System.out.println("\nWhich book would you like to return this book today? Enter book number.");
+                int index = scan.nextInt();
+                System.out.println(catalogue.get(index - 1));
 
+                //look to see if the book is already checked in
+                //if it is, skip the would you like to check in question
+                System.out.println("Are you sure you want to return this book today?");
+
+                System.out.println("Please enter 1 for Yes and 2 for No.");
+                choice = scan.nextInt();
+                if (choice == 1) {
+                    //check if the status for this book is already checked in
+                    if (catalogue.get(index - 1).getStatus().equals("Checked In")) {
+                        //if it is, tell the user they can't
+                        System.out.println("That book is already on the shelf.");
+                    } else {
+                        //if not (else), check it out
+                        catalogue.get(index - 1).checkIn();
+                        System.out.println("\nThank you for returning this book.");
+                    }
+
+                } else {
+                    System.out.println("Please make another choice");
+                }
+            }
+            //end option 4: return a books
+
+
+            //option 5: quit
+            if (userInput == 5) {
+                System.out.println("Goodbye. Visit us again soon.");
+                return;
+            }
+            //end option 5: quit
         }
     }
+}

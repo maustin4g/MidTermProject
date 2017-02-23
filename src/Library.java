@@ -19,8 +19,9 @@ public class Library {
 
     //redo or make another method to use contains instead of equals?
     public Book getBookTitle (String title, ArrayList<Book> catalogue) {
+        System.out.println(title);
         for (Book b: catalogue) {
-            if (title.equalsIgnoreCase(b.getTitle())) {
+            if (title.contains(b.getTitle())) {
                 return b;
             }
         }
