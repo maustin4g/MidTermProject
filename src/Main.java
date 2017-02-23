@@ -51,8 +51,23 @@ public class Main {
         Book b8 = new Book("Thug Kitchen, LLC", "Thug Kitchen",
                 "Print", "Nonfiction", "Checked In");
 
+        Book b9 = new Book(" Rachel Ignotofsky", "Women in Science",
+                "Print", "Nonfiction", "Checked In");
 
-        //ADD BOOKS TO ARRAYLIST
+        Book b10 = new Book("Bertrand Russell", "The Problems of Philosophy",
+                "Digital", "Nonfiction", "Checked In");
+
+        Book b11 = new Book("William Shakespeare", "Hamlet",
+                "Print", "Fiction", "Checked In");
+
+        Book b12 = new Book("Lewis Carroll", "Alice in Wonderland",
+                "Digital", "Fiction", "Checked In");
+
+
+
+
+
+                //ADD BOOKS TO ARRAYLIST
         catalogue.add(b1);
         catalogue.add(b2);
         catalogue.add(b3);
@@ -61,6 +76,11 @@ public class Main {
         catalogue.add(b6);
         catalogue.add(b7);
         catalogue.add(b8);
+        catalogue.add(b9);
+        catalogue.add(b10);
+        catalogue.add(b11);
+        catalogue.add(b12);
+
 
         //loop until all books are printed and checked out
         while (true) {
@@ -96,13 +116,14 @@ public class Main {
                 if (catalogue.get(index - 1).getStatus().equals("Checked In")) {
                     //if it is, tell the user they can't
                     System.out.println("That book is available.");
-
-                    System.out.println("\nWould you like to checkout this book today?");
-                    System.out.println("Please enter 1 for Yes and 2 for No.");
+                    System.out.println("Would you like to checkout this book today?");
+                    System.out.println("Please enter 1 for Yes and 2 for No.\n");
                     choice = scan.nextInt();
                     if (choice == 1) {
                         catalogue.get(index - 1).checkOut();
-                    } else {//if not (else), check it out
+                        System.out.println("Check-out complete. Enjoy your book.");
+
+                } else {//if not (else), check it out
                         System.out.println("Thank you. ");
                     }
 
@@ -185,6 +206,6 @@ public class Main {
                 return;
             }
             //end option 5: quit
-        }
+         }
     }
 }
