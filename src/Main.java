@@ -15,6 +15,18 @@ public class Main {
 
         ///CREATE BOOK FROM HARD-CODED VALUES
 
+
+        ///USER PROMPT///
+        System.out.println("Would you like to see the books we have available today? Enter 1 for yes and 2 for no. ");
+        //GET USER INPUT
+        int userInput = scan.nextInt();
+        if (userInput == 2) {
+            System.out.println("Goodbye. Visit us again soon.");
+        }
+
+        //create Book from hard-coded values and adds them
+        // to the catalogue
+
         Book b1 = new Book("Charles Dickens", "Great Expectations",
                 "Print", "Fiction", "Checked In");
 
@@ -39,6 +51,7 @@ public class Main {
         Book b8 = new Book("Thug Kitchen, LLC", "Thug Kitchen",
                 "Print", "Nonfiction", "Checked In");
 
+
         //ADD BOOKS TO ARRAYLIST
         catalogue.add(b1);
         catalogue.add(b2);
@@ -51,6 +64,7 @@ public class Main {
 
         //loop until all books are printed and checked out
         while (true) {
+
             ///USER PROMPT///
             System.out.println("What would you like to do?");
             System.out.println("1-See all books");
@@ -60,7 +74,7 @@ public class Main {
             System.out.println("5-Exit system");
             System.out.println();
             //GET USER INPUT
-            int userInput = scan.nextInt();
+            userInput = scan.nextInt();
 
             //if-else or switch with menu options based on user input
 
@@ -168,6 +182,8 @@ public class Main {
         }
     }
 }
+
+
 
 
 

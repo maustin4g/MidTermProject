@@ -23,6 +23,12 @@ public class Book {
         return author;
     }
 
+
+
+
+    //Generating the 'setter'
+
+
     public void setAuthor(String author) {
         this.author = author;
     }
@@ -34,6 +40,7 @@ public class Book {
     public void setTitle(String title) {
         this.title = title;
     }
+
 
     public String getFormat() {
         return format;
